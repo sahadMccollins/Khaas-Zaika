@@ -2335,11 +2335,30 @@
             if (type === 'whatsapp') {
                 const msg = `Hi H2O Cafe! I'd like to place a Khaas Zaika catering enquiry:%0A%0A👤 *Name:* ${fname} ${lname}%0A📧 *Email:* ${email}%0A📞 *Phone:* ${phone}%0A%0A🗓️ *Event Date:* ${date}%0A⏰ *Time:* ${time}%0A👥 *Guests:* ${guests}%0A📦 *Package:* ${pkg}%0A🎉 *Occasion:* ${occasion}%0A📍 *Location:* ${location}%0A%0A✅ *Menu Preferences:* ${prefs || 'Not specified'}%0A%0A💬 *Special Requests:* ${special || 'None'}%0A%0APlease confirm availability. Thank you!`;
                 window.open('https://wa.me/971561387787?text=' + msg, '_blank');
+            } else {
+                fetch('https://custom-backend-kkr1.vercel.app/api/khaas-zaika-form', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        fname, lname, email, phone, date, time,
+                        guests, pkg, occasion, location, special, prefs
+                    })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.getElementById('theForm').style.display = 'none';
+                            document.getElementById('successState').classList.add('visible');
+                        } else {
+                            showToast('Failed to send enquiry');
+                        }
+                    })
+                    .catch(() => showToast('Error sending form'));
             }
 
-            document.getElementById('theForm').style.display = 'none';
-            document.getElementById('successState').classList.add('visible');
-            window.scrollTo({ top: document.getElementById('order').offsetTop - 80, behavior: 'smooth' });
+            // document.getElementById('theForm').style.display = 'none';
+            // document.getElementById('successState').classList.add('visible');
+            // window.scrollTo({ top: document.getElementById('order').offsetTop - 80, behavior: 'smooth' });
         }
 
         function showToast(msg) {
