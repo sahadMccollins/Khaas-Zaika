@@ -1,0 +1,2383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khaas Zaika Catering — H2O Cafe & Restaurant Dubai</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --ink: #0D0C0A;
+            --deep: #141210;
+            --surface: #1C1916;
+            --card: #221F1B;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-gold: rgba(196, 150, 56, 0.3);
+            --gold: #C49638;
+            --gold-light: #E8BE68;
+            --gold-pale: rgba(196, 150, 56, 0.1);
+            --spice: #C0521A;
+            --cream: #F5EDD8;
+            --white: #FFFFFF;
+            --text: rgba(245, 237, 216, 0.9);
+            --text-mid: rgba(245, 237, 216, 0.55);
+            --text-soft: rgba(245, 237, 216, 0.35);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--ink);
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── ANNOUNCEMENT ── */
+        .announce {
+            background: var(--gold);
+            color: var(--ink);
+            text-align: center;
+            padding: 10px 24px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: rgba(13, 12, 10, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 74px;
+        }
+
+        .nav-brand-outer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .nav-brand-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold-light);
+            letter-spacing: 1px;
+        }
+
+        .nav-brand-logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .nav-brand-sub {
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-soft);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .nav-wa {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: #fff;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: opacity .2s, transform .2s;
+            border-radius: 2px;
+        }
+
+        .nav-wa:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+
+        .nav-wa svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(13, 12, 10, 0.97) 0%, rgba(20, 18, 16, 0.85) 50%, rgba(13, 12, 10, 0.92) 100%),
+                url('https://h2ocafeandrestaurant.ae/wp-content/uploads/2025/06/1.jpg') center/cover no-repeat;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(ellipse 60% 70% at 80% 50%, rgba(196, 150, 56, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 50% at 10% 80%, rgba(192, 82, 26, 0.06) 0%, transparent 50%);
+        }
+
+        /* Decorative mandala ring */
+        .hero-ring {
+            position: absolute;
+            right: 6%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 460px;
+            height: 460px;
+            border: 1px solid var(--border-gold);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .hero-ring::before {
+            content: '';
+            position: absolute;
+            inset: 24px;
+            border: 1px dashed rgba(196, 150, 56, 0.2);
+            border-radius: 50%;
+        }
+
+        .hero-ring::after {
+            content: '';
+            position: absolute;
+            inset: 60px;
+            border: 1px solid rgba(196, 150, 56, 0.15);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 56px 80px;
+            width: 100%;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(52px, 6vw, 88px);
+            font-weight: 700;
+            line-height: 1.04;
+            color: var(--cream);
+            max-width: 700px;
+            margin-bottom: 10px;
+        }
+
+        .h1-sub {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(24px, 2.8vw, 38px);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--gold-light);
+            margin-bottom: 28px;
+            display: block;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--text-mid);
+            max-width: 520px;
+            margin-bottom: 48px;
+            font-weight: 300;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--ink);
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 16px 36px;
+            text-decoration: none;
+            transition: background .25s, transform .2s, box-shadow .25s;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 36px rgba(196, 150, 56, 0.3);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding: 16px 32px;
+            text-decoration: none;
+            transition: background .25s, transform .2s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold-pale);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 56px;
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .hstat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--gold-light);
+            line-height: 1;
+        }
+
+        .hstat-label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-soft);
+            margin-top: 5px;
+        }
+
+        /* ── SECTION SHARED ── */
+        .section {
+            padding: 100px 56px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(34px, 4vw, 56px);
+            font-weight: 700;
+            text-align: center;
+            color: var(--cream);
+            line-height: 1.1;
+            margin-bottom: 14px;
+        }
+
+        h2 em {
+            font-style: italic;
+            color: var(--gold-light);
+            font-weight: 400;
+        }
+
+        .section-sub {
+            text-align: center;
+            font-size: 15px;
+            color: var(--text-mid);
+            max-width: 540px;
+            margin: 0 auto 64px;
+            line-height: 1.9;
+        }
+
+        /* ── DIVIDER ── */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 0 56px;
+            opacity: 0.4;
+        }
+
+        .divider-line {
+            flex: 1;
+            max-width: 200px;
+            height: 1px;
+            background: var(--border-gold);
+        }
+
+        .divider-icon {
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        /* ── FEATURES STRIP ── */
+        .features-strip {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 0 56px;
+        }
+
+        .features-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .feature {
+            background: var(--surface);
+            padding: 40px 28px;
+            text-align: center;
+            transition: background .3s;
+        }
+
+        .feature:hover {
+            background: var(--card);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 14px;
+        }
+
+        .feature h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            font-size: 13px;
+            color: var(--text-mid);
+            line-height: 1.75;
+        }
+
+        /* ── MENU SECTION ── */
+        .menu-section {
+            background: var(--deep);
+            padding: 100px 56px;
+        }
+
+        .menu-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 48px;
+            border: 1px solid var(--border-gold);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+        }
+
+        .menu-tab {
+            padding: 12px 28px;
+            background: transparent;
+            color: var(--text-mid);
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: background .2s, color .2s;
+            border-right: 1px solid var(--border-gold);
+        }
+
+        .menu-tab:last-child {
+            border-right: none;
+        }
+
+        .menu-tab.active {
+            background: var(--gold);
+            color: var(--ink);
+        }
+
+        .menu-tab:hover:not(.active) {
+            background: var(--gold-pale);
+            color: var(--gold-light);
+        }
+
+        .menu-panel {
+            display: none;
+        }
+
+        .menu-panel.active {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .menu-item {
+            background: var(--card);
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            transition: background .3s;
+        }
+
+        .menu-item:hover {
+            background: #2A2520;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .menu-item-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--cream);
+            line-height: 1.3;
+        }
+
+        .menu-item-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gold-light);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .menu-item-desc {
+            font-size: 12px;
+            color: var(--text-mid);
+            line-height: 1.7;
+        }
+
+        .menu-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 2px;
+            width: fit-content;
+        }
+
+        .badge-veg {
+            background: rgba(34, 139, 34, 0.2);
+            color: #6EC06E;
+            border: 1px solid rgba(34, 139, 34, 0.3);
+        }
+
+        .badge-nonveg {
+            background: rgba(192, 82, 26, 0.2);
+            color: #E08050;
+            border: 1px solid rgba(192, 82, 26, 0.3);
+        }
+
+        .badge-chef {
+            background: rgba(196, 150, 56, 0.2);
+            color: var(--gold-light);
+            border: 1px solid var(--border-gold);
+        }
+
+        .menu-note {
+            margin-top: 40px;
+            padding: 20px 28px;
+            background: var(--gold-pale);
+            border: 1px solid var(--border-gold);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .menu-note-icon {
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .menu-note p {
+            font-size: 13px;
+            color: var(--gold-light);
+            line-height: 1.7;
+        }
+
+        .menu-note strong {
+            color: var(--cream);
+            font-weight: 600;
+        }
+
+        /* ── PACKAGES ── */
+        .packages-section {
+            padding: 100px 56px;
+        }
+
+        .packages-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .pkg {
+            background: var(--card);
+            padding: 48px 32px;
+            position: relative;
+            overflow: hidden;
+            transition: background .3s;
+        }
+
+        .pkg:hover {
+            background: #2A2520;
+        }
+
+        .pkg.featured {
+            background: var(--surface);
+        }
+
+        .pkg.featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--spice));
+        }
+
+        .pkg-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--ink);
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 4px 12px;
+            margin-bottom: 20px;
+        }
+
+        .pkg-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 6px;
+        }
+
+        .pkg-arabic {
+            font-size: 16px;
+            color: var(--gold-light);
+            margin-bottom: 18px;
+            opacity: 0.8;
+        }
+
+        .pkg-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--gold-light);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .pkg-price span {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--text-mid);
+        }
+
+        .pkg-pax {
+            font-size: 12px;
+            color: var(--text-soft);
+            margin-bottom: 24px;
+        }
+
+        .pkg-includes {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .pkg-includes li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-mid);
+            padding: 7px 0;
+            border-bottom: 1px solid var(--border);
+            line-height: 1.5;
+        }
+
+        .pkg-includes li:last-child {
+            border-bottom: none;
+        }
+
+        .pkg-includes li::before {
+            content: '✦';
+            color: var(--gold);
+            font-size: 10px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .pkg-btn {
+            display: block;
+            text-align: center;
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding: 14px 24px;
+            text-decoration: none;
+            cursor: pointer;
+            background: transparent;
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            transition: background .25s, color .25s, transform .2s;
+        }
+
+        .pkg-btn:hover,
+        .pkg.featured .pkg-btn {
+            background: var(--gold);
+            color: var(--ink);
+        }
+
+        .pkg.featured .pkg-btn:hover {
+            background: var(--gold-light);
+        }
+
+        /* ── ORDER FORM ── */
+        .form-section {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 100px 56px;
+        }
+
+        .form-wrapper {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .form-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 64px;
+            position: relative;
+        }
+
+        .form-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--spice), var(--gold));
+        }
+
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 6px;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: var(--text-mid);
+            margin-bottom: 40px;
+            line-height: 1.75;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .fg {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .fg.full {
+            grid-column: 1 / -1;
+        }
+
+        .fg label {
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .fg input,
+        .fg select,
+        .fg textarea {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--cream);
+            padding: 14px 18px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s;
+            width: 100%;
+            -webkit-appearance: none;
+            border-radius: 0;
+        }
+
+        .fg input::placeholder,
+        .fg textarea::placeholder {
+            color: var(--text-soft);
+        }
+
+        .fg input:focus,
+        .fg select:focus,
+        .fg textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(196, 150, 56, 0.1);
+        }
+
+        .fg select {
+            cursor: pointer;
+            color: var(--text-mid);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C49638' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-color: rgba(255, 255, 255, 0.04);
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 40px;
+        }
+
+        .fg select option {
+            background: #2A2520;
+            color: var(--cream);
+        }
+
+        .fg textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        /* Counter input */
+        .counter-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .counter-btn {
+            width: 46px;
+            height: 46px;
+            background: rgba(196, 150, 56, 0.15);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s;
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .counter-btn:hover {
+            background: rgba(196, 150, 56, 0.3);
+        }
+
+        .counter-val {
+            flex: 1;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.04);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--cream);
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 600;
+            height: 46px;
+            line-height: 46px;
+            min-width: 60px;
+        }
+
+        /* Menu checkboxes */
+        .menu-checks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .menu-check {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+        }
+
+        .menu-check:hover {
+            border-color: var(--border-gold);
+            background: var(--gold-pale);
+        }
+
+        .menu-check.selected {
+            border-color: var(--gold);
+            background: var(--gold-pale);
+        }
+
+        .menu-check input {
+            display: none;
+        }
+
+        .check-box {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            border: 1px solid var(--border-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s;
+        }
+
+        .menu-check.selected .check-box {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .check-tick {
+            color: var(--ink);
+            font-size: 10px;
+            font-weight: 700;
+            display: none;
+        }
+
+        .menu-check.selected .check-tick {
+            display: block;
+        }
+
+        .check-label {
+            font-size: 13px;
+            color: var(--text-mid);
+            line-height: 1.4;
+        }
+
+        .menu-check.selected .check-label {
+            color: var(--cream);
+        }
+
+        /* Date/time row */
+        .datetime-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* WhatsApp btn */
+        .wa-submit-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .btn-submit {
+            background: var(--gold);
+            color: var(--ink);
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 18px 28px;
+            cursor: pointer;
+            transition: background .25s, transform .2s, box-shadow .2s;
+        }
+
+        .btn-submit:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(196, 150, 56, 0.25);
+        }
+
+        .btn-wa-submit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 18px 24px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background .25s, transform .2s;
+        }
+
+        .btn-wa-submit:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+        }
+
+        .btn-wa-submit svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-soft);
+            margin-top: 14px;
+        }
+
+        /* Success */
+        .success-state {
+            display: none;
+            text-align: center;
+            padding: 56px 16px;
+        }
+
+        .success-state.visible {
+            display: block;
+        }
+
+        .success-icon {
+            font-size: 60px;
+            margin-bottom: 18px;
+        }
+
+        .success-state h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 12px;
+        }
+
+        .success-state p {
+            font-size: 15px;
+            color: var(--text-mid);
+            line-height: 1.9;
+        }
+
+        .success-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 28px;
+            background: #25D366;
+            color: #fff;
+            padding: 16px 32px;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background .2s, transform .2s;
+            border-radius: 2px;
+        }
+
+        .success-wa:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+        }
+
+        .success-wa svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ── WHATSAPP FLOAT ── */
+        .wa-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform .2s, box-shadow .2s;
+            animation: pulseWa 2.5s ease-in-out infinite;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+        }
+
+        .wa-float svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        @keyframes pulseWa {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 6px 36px rgba(37, 211, 102, 0.65);
+            }
+        }
+
+        .wa-tooltip {
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--ink);
+            color: var(--cream);
+            padding: 8px 14px;
+            font-size: 12px;
+            white-space: nowrap;
+            border: 1px solid var(--border-gold);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .2s;
+        }
+
+        .wa-float:hover .wa-tooltip {
+            opacity: 1;
+        }
+
+        /* ── TESTIMONIALS ── */
+        .testi-section {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 96px 56px;
+        }
+
+        .testi-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            margin-top: 56px;
+        }
+
+        .testi {
+            background: var(--surface);
+            padding: 36px 28px;
+            transition: background .3s;
+        }
+
+        .testi:hover {
+            background: var(--card);
+        }
+
+        .stars {
+            color: var(--gold-light);
+            font-size: 14px;
+            margin-bottom: 14px;
+            letter-spacing: 3px;
+        }
+
+        .testi-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-style: italic;
+            color: rgba(245, 237, 216, 0.7);
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .testi-author {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .testi-source {
+            font-size: 10px;
+            color: var(--text-soft);
+            margin-top: 3px;
+        }
+
+        /* ── CONTACT STRIP ── */
+        .contact-strip {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 56px;
+        }
+
+        .contact-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .contact-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-soft);
+            margin-bottom: 4px;
+        }
+
+        .contact-val {
+            font-size: 15px;
+            color: var(--cream);
+            font-weight: 400;
+        }
+
+        .contact-val a {
+            color: var(--cream);
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .contact-val a:hover {
+            color: var(--gold-light);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--deep);
+            border-top: 1px solid var(--border);
+            padding: 40px 56px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--gold-light);
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .footer-tagline {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-soft);
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-soft);
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: var(--text-soft);
+        }
+
+        /* ── TOAST ── */
+        .toast {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--spice);
+            color: #fff;
+            padding: 13px 28px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .anim {
+            opacity: 0;
+            animation: fadeUp .7s ease forwards;
+        }
+
+        .d1 {
+            animation-delay: .05s
+        }
+
+        .d2 {
+            animation-delay: .2s
+        }
+
+        .d3 {
+            animation-delay: .35s
+        }
+
+        .d4 {
+            animation-delay: .5s
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 960px) {
+            nav {
+                padding: 0 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                padding: 100px 24px 64px;
+            }
+
+            .hero-ring {
+                display: none;
+            }
+
+            .features-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .menu-section {
+                padding: 72px 24px;
+            }
+
+            .menu-panel.active {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .packages-section {
+                padding: 72px 24px;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-section {
+                padding: 72px 24px;
+            }
+
+            .form-box {
+                padding: 36px 24px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-checks {
+                grid-template-columns: 1fr;
+            }
+
+            .wa-submit-row {
+                grid-template-columns: 1fr;
+            }
+
+            .datetime-row {
+                grid-template-columns: 1fr;
+            }
+
+            .testi-section {
+                padding: 72px 24px;
+            }
+
+            .testi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-strip {
+                padding: 40px 24px;
+            }
+
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .section {
+                padding: 72px 24px;
+            }
+
+            footer {
+                padding: 36px 24px;
+            }
+
+            .features-strip {
+                padding: 0 24px;
+            }
+
+            .divider {
+                padding: 0 24px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            h1 {
+                font-size: 44px;
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+
+            .menu-panel.active {
+                grid-template-columns: 1fr;
+            }
+
+            .features-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-tabs {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WHATSAPP FLOAT -->
+    <a class="wa-float"
+        href="https://wa.me/971561387787?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20Khaas%20Zaika%20catering%20by%20H2O%20Cafe!"
+        target="_blank" aria-label="Chat on WhatsApp">
+        <span class="wa-tooltip">Chat on WhatsApp</span>
+        <svg viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.528 5.857L.057 23.25a.75.75 0 00.924.924l5.393-1.471A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.692-.518-5.222-1.416l-.374-.22-3.877 1.057 1.057-3.877-.22-.374A9.953 9.953 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z" />
+        </svg>
+    </a>
+
+    <!-- ANNOUNCEMENT -->
+    <div class="announce">🍛 &nbsp; Khaas Zaika Catering — Bringing authentic flavours to your event &nbsp;·&nbsp; Call
+        +971 56 138 7787</div>
+
+    <!-- NAV -->
+    <nav>
+
+        <div class="nav-brand-outer">
+            <div>
+                <img class="nav-brand-logo" src="https://h2ocafeandrestaurant.ae/wp-content/uploads/2025/06/Logo.png"
+                    alt="Khaas Zaika Logo">
+            </div>
+            <div class="nav-brand">
+                <span class="nav-brand-main">Khaas Zaika</span>
+                <span class="nav-brand-sub">by H2O Cafe &amp; Restaurant · Dubai</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#order">Order</a></li>
+            </ul>
+            <a class="nav-wa"
+                href="https://wa.me/971561387787?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20Khaas%20Zaika%20catering!"
+                target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                    <path
+                        d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.528 5.857L.057 23.25a.75.75 0 00.924.924l5.393-1.471A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.692-.518-5.222-1.416l-.374-.22-3.877 1.057 1.057-3.877-.22-.374A9.953 9.953 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z" />
+                </svg>
+                WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-ring"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow anim d1">Catering · Events · Corporate</p>
+            <h1 class="anim d2">Khaas Zaika</h1>
+            <span class="h1-sub anim d2">The Taste of Something Special</span>
+            <p class="hero-desc anim d3">Authentic Indian bistro cuisine brought directly to your event. From intimate
+                gatherings to large corporate functions — we deliver an unforgettable culinary experience tailored to
+                every occasion.</p>
+            <div class="hero-ctas anim d4">
+                <a href="#order" class="btn-primary">Place a Catering Order</a>
+                <a href="#menu" class="btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                    View the Menu
+                </a>
+            </div>
+            <div class="hero-stats anim d4">
+                <div>
+                    <div class="hstat-num">50+</div>
+                    <div class="hstat-label">Menu Items</div>
+                </div>
+                <div>
+                    <div class="hstat-num">10+</div>
+                    <div class="hstat-label">Min. Guests</div>
+                </div>
+                <div>
+                    <div class="hstat-num">48hr</div>
+                    <div class="hstat-label">Advance Notice</div>
+                </div>
+                <div>
+                    <div class="hstat-num">5★</div>
+                    <div class="hstat-label">Google Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES STRIP -->
+    <div class="features-strip">
+        <div class="features-inner">
+            <div class="feature">
+                <div class="feature-icon">🍛</div>
+                <h3>Authentic Recipes</h3>
+                <p>Traditional Indian flavours crafted with molecular gastronomy innovation</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🚚</div>
+                <h3>Dubai Delivery</h3>
+                <p>Full setup and delivery anywhere across Dubai — on time, every time</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎉</div>
+                <h3>All Occasions</h3>
+                <p>Weddings, corporate events, birthdays, private dinners and more</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✏️</div>
+                <h3>Custom Menus</h3>
+                <p>Fully customisable menus to match your dietary and event requirements</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MENU SECTION -->
+    <div class="menu-section" id="menu">
+        <div class="menu-inner">
+            <p class="section-label">Khaas Zaika Menu</p>
+            <h2>Explore Our <em>Catering Menu</em></h2>
+            <p class="section-sub">All dishes prepared fresh using authentic spices. Minimum order of 10 persons. Prices
+                are per person unless stated.</p>
+
+            <div class="menu-tabs">
+                <button class="menu-tab active" onclick="showTab('starters')">Starters</button>
+                <button class="menu-tab" onclick="showTab('mains')">Mains</button>
+                <button class="menu-tab" onclick="showTab('rice')">Rice &amp; Breads</button>
+                <button class="menu-tab" onclick="showTab('desserts')">Desserts</button>
+                <button class="menu-tab" onclick="showTab('beverages')">Beverages</button>
+            </div>
+
+            <!-- STARTERS -->
+            <div class="menu-panel active" id="tab-starters">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Samosa Chaat</span>
+                        <span class="menu-item-price">AED 18</span>
+                    </div>
+                    <p class="menu-item-desc">Crispy samosas topped with tangy tamarind chutney, yoghurt and fresh
+                        coriander</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Chicken Tikka</span>
+                        <span class="menu-item-price">AED 28</span>
+                    </div>
+                    <p class="menu-item-desc">Tender chicken marinated in aromatic spices, char-grilled in a tandoor
+                        oven</p>
+                    <span class="menu-badge badge-chef">★ Chef's Pick</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Paneer Tikka</span>
+                        <span class="menu-item-price">AED 24</span>
+                    </div>
+                    <p class="menu-item-desc">Fresh cottage cheese cubes marinated in spiced yoghurt, grilled to
+                        perfection</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Seekh Kebab</span>
+                        <span class="menu-item-price">AED 26</span>
+                    </div>
+                    <p class="menu-item-desc">Minced lamb with fresh herbs and spices, skewered and cooked over charcoal
+                    </p>
+                    <span class="menu-badge badge-nonveg">● Non-Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Dahi Puri</span>
+                        <span class="menu-item-price">AED 16</span>
+                    </div>
+                    <p class="menu-item-desc">Crisp puris filled with spiced potatoes, yoghurt and sweet-tangy chutneys
+                    </p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Fish Amritsari</span>
+                        <span class="menu-item-price">AED 32</span>
+                    </div>
+                    <p class="menu-item-desc">Beer-battered fish fillets seasoned with Amritsari spices, served with
+                        mint chutney</p>
+                    <span class="menu-badge badge-chef">★ Chef's Pick</span>
+                </div>
+            </div>
+
+            <!-- MAINS -->
+            <div class="menu-panel" id="tab-mains">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Butter Chicken</span>
+                        <span class="menu-item-price">AED 38</span>
+                    </div>
+                    <p class="menu-item-desc">Slow-cooked chicken in a rich, velvety tomato and butter sauce — the
+                        ultimate crowd pleaser</p>
+                    <span class="menu-badge badge-chef">★ Chef's Pick</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Dal Makhani</span>
+                        <span class="menu-item-price">AED 28</span>
+                    </div>
+                    <p class="menu-item-desc">Black lentils slow-cooked overnight with cream and butter in a traditional
+                        dum style</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Lamb Rogan Josh</span>
+                        <span class="menu-item-price">AED 44</span>
+                    </div>
+                    <p class="menu-item-desc">Aromatic Kashmiri lamb curry with whole spices, cooked low and slow for
+                        deep flavour</p>
+                    <span class="menu-badge badge-nonveg">● Non-Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Palak Paneer</span>
+                        <span class="menu-item-price">AED 30</span>
+                    </div>
+                    <p class="menu-item-desc">Fresh cottage cheese in a smooth, spiced spinach gravy with a hint of
+                        cream</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Prawn Masala</span>
+                        <span class="menu-item-price">AED 48</span>
+                    </div>
+                    <p class="menu-item-desc">Juicy prawns cooked in a bold coastal masala with tomatoes, onions and
+                        fresh spices</p>
+                    <span class="menu-badge badge-nonveg">● Non-Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Chana Masala</span>
+                        <span class="menu-item-price">AED 24</span>
+                    </div>
+                    <p class="menu-item-desc">Hearty chickpeas cooked in a bold, tangy tomato-based masala with warming
+                        spices</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+            </div>
+
+            <!-- RICE & BREADS -->
+            <div class="menu-panel" id="tab-rice">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Chicken Biryani</span>
+                        <span class="menu-item-price">AED 42</span>
+                    </div>
+                    <p class="menu-item-desc">Fragrant basmati rice layered with spiced chicken, saffron and crispy
+                        fried onions</p>
+                    <span class="menu-badge badge-chef">★ Chef's Pick</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Vegetable Biryani</span>
+                        <span class="menu-item-price">AED 32</span>
+                    </div>
+                    <p class="menu-item-desc">Seasonal vegetables and basmati rice slow-cooked with whole spices and
+                        saffron</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Lamb Biryani</span>
+                        <span class="menu-item-price">AED 52</span>
+                    </div>
+                    <p class="menu-item-desc">Slow-cooked lamb with aged basmati rice, rose water and saffron — the
+                        showstopper</p>
+                    <span class="menu-badge badge-nonveg">● Non-Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Garlic Naan</span>
+                        <span class="menu-item-price">AED 10</span>
+                    </div>
+                    <p class="menu-item-desc">Freshly baked leavened bread with garlic and butter, straight from the
+                        tandoor</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Laccha Paratha</span>
+                        <span class="menu-item-price">AED 12</span>
+                    </div>
+                    <p class="menu-item-desc">Layered whole-wheat flatbread, buttered and flaky — perfect with any curry
+                    </p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Jeera Rice</span>
+                        <span class="menu-item-price">AED 18</span>
+                    </div>
+                    <p class="menu-item-desc">Steamed basmati rice tempered with cumin seeds, ghee and fresh coriander
+                    </p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+            </div>
+
+            <!-- DESSERTS -->
+            <div class="menu-panel" id="tab-desserts">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Gulab Jamun</span>
+                        <span class="menu-item-price">AED 18</span>
+                    </div>
+                    <p class="menu-item-desc">Soft milk-solid dumplings soaked in rose-flavoured sugar syrup, served
+                        warm</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Rasmalai</span>
+                        <span class="menu-item-price">AED 20</span>
+                    </div>
+                    <p class="menu-item-desc">Delicate cottage cheese patties in chilled saffron and cardamom-flavoured
+                        cream</p>
+                    <span class="menu-badge badge-chef">★ Chef's Pick</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Kheer</span>
+                        <span class="menu-item-price">AED 16</span>
+                    </div>
+                    <p class="menu-item-desc">Creamy rice pudding slow-cooked with cardamom, saffron and garnished with
+                        nuts</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Gajar Halwa</span>
+                        <span class="menu-item-price">AED 18</span>
+                    </div>
+                    <p class="menu-item-desc">Traditional carrot pudding cooked with ghee, milk, sugar and topped with
+                        cashews</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Mango Kulfi</span>
+                        <span class="menu-item-price">AED 22</span>
+                    </div>
+                    <p class="menu-item-desc">Dense and creamy Indian ice cream made with condensed milk and fresh
+                        Alphonso mango</p>
+                    <span class="menu-badge badge-chef">★ Chef's Pick</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Shahi Tukda</span>
+                        <span class="menu-item-price">AED 20</span>
+                    </div>
+                    <p class="menu-item-desc">Deep-fried bread soaked in sugar syrup, topped with rabri and garnished
+                        with pistachios</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+            </div>
+
+            <!-- BEVERAGES -->
+            <div class="menu-panel" id="tab-beverages">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Mango Lassi</span>
+                        <span class="menu-item-price">AED 20</span>
+                    </div>
+                    <p class="menu-item-desc">Thick, refreshing yoghurt drink blended with sweet Alphonso mango and
+                        cardamom</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Masala Chai</span>
+                        <span class="menu-item-price">AED 14</span>
+                    </div>
+                    <p class="menu-item-desc">Spiced Indian tea brewed with ginger, cardamom, cinnamon and fresh mint
+                    </p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Rose Sharbat</span>
+                        <span class="menu-item-price">AED 16</span>
+                    </div>
+                    <p class="menu-item-desc">Chilled rose-flavoured syrup with basil seeds and a splash of fresh lemon
+                        juice</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Fresh Lime Soda</span>
+                        <span class="menu-item-price">AED 14</span>
+                    </div>
+                    <p class="menu-item-desc">Fizzy fresh lime with a choice of sweet, salted or mixed — refreshing and
+                        classic</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Thandai</span>
+                        <span class="menu-item-price">AED 22</span>
+                    </div>
+                    <p class="menu-item-desc">Chilled milk-based drink with almonds, fennel seeds, rose petals and
+                        saffron</p>
+                    <span class="menu-badge badge-chef">★ Chef's Pick</span>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <span class="menu-item-name">Virgin Mojito</span>
+                        <span class="menu-item-price">AED 22</span>
+                    </div>
+                    <p class="menu-item-desc">Fresh mint, lime, sugar and soda water — light, fizzy and perfectly
+                        balanced</p>
+                    <span class="menu-badge badge-veg">● Veg</span>
+                </div>
+            </div>
+
+            <div class="menu-note">
+                <span class="menu-note-icon">💡</span>
+                <p><strong>Custom menus available.</strong> Don't see what you're looking for? We're happy to tailor the
+                    menu to your dietary requirements, cuisine preferences or event theme. Contact us on WhatsApp to
+                    discuss.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PACKAGES -->
+    <div class="packages-section" id="packages">
+        <div class="packages-inner">
+            <p class="section-label">Catering Packages</p>
+            <h2>Choose Your <em>Package</em></h2>
+            <p class="section-sub">All packages include delivery, setup and service staff. Prices per person, minimum 10
+                guests.</p>
+            <div class="packages-grid">
+                <div class="pkg">
+                    <div class="pkg-name">Zafrani</div>
+                    <div class="pkg-arabic">زعفراني</div>
+                    <div class="pkg-price">AED 85 <span>/ person</span></div>
+                    <div class="pkg-pax">Minimum 10 guests</div>
+                    <ul class="pkg-includes">
+                        <li>Choice of 2 starters</li>
+                        <li>Choice of 2 main courses</li>
+                        <li>Rice or 2 breads</li>
+                        <li>1 dessert</li>
+                        <li>Soft drinks included</li>
+                        <li>Delivery within Dubai</li>
+                    </ul>
+                    <button class="pkg-btn" onclick="selectPackage('Zafrani — AED 85/person')">Select Package</button>
+                </div>
+                <div class="pkg featured">
+                    <span class="pkg-badge">Most Popular</span>
+                    <div class="pkg-name">Shahi</div>
+                    <div class="pkg-arabic">شاهی</div>
+                    <div class="pkg-price">AED 130 <span>/ person</span></div>
+                    <div class="pkg-pax">Minimum 20 guests</div>
+                    <ul class="pkg-includes">
+                        <li>Choice of 3 starters</li>
+                        <li>Choice of 3 main courses</li>
+                        <li>Biryani + 2 breads</li>
+                        <li>2 desserts</li>
+                        <li>Lassi + soft drinks included</li>
+                        <li>Delivery + setup staff</li>
+                        <li>Live chaat station</li>
+                    </ul>
+                    <button class="pkg-btn" onclick="selectPackage('Shahi — AED 130/person')">Select Package</button>
+                </div>
+                <div class="pkg">
+                    <div class="pkg-name">Khaas</div>
+                    <div class="pkg-arabic">خاص</div>
+                    <div class="pkg-price">AED 195 <span>/ person</span></div>
+                    <div class="pkg-pax">Minimum 30 guests</div>
+                    <ul class="pkg-includes">
+                        <li>Full starter selection</li>
+                        <li>Choice of 4 main courses</li>
+                        <li>Biryani + full bread basket</li>
+                        <li>Full dessert station</li>
+                        <li>All beverages included</li>
+                        <li>Full service team on-site</li>
+                        <li>Live tandoor station</li>
+                        <li>Custom menu consultation</li>
+                    </ul>
+                    <button class="pkg-btn" onclick="selectPackage('Khaas — AED 195/person')">Select Package</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <section class="form-section" id="order">
+        <div class="form-wrapper">
+            <div style="text-align:center; margin-bottom:52px;">
+                <p class="section-label">Place Your Order</p>
+                <h2>Request a <em>Catering Quote</em></h2>
+                <p class="section-sub" style="margin-bottom:0;">Fill in your details below and our team will confirm
+                    your booking within 24 hours. You can also reach us instantly on WhatsApp.</p>
+            </div>
+            <div class="form-box">
+                <div id="theForm">
+                    <p class="form-title">Catering Enquiry</p>
+                    <p class="form-subtitle">All fields marked * are required. We'll get back to you within 24 hours to
+                        confirm availability and finalise your menu.</p>
+                    <div class="form-grid">
+
+                        <div class="fg">
+                            <label for="fname">First Name *</label>
+                            <input type="text" id="fname" placeholder="e.g. Rahul" />
+                        </div>
+                        <div class="fg">
+                            <label for="lname">Last Name *</label>
+                            <input type="text" id="lname" placeholder="e.g. Sharma" />
+                        </div>
+                        <div class="fg">
+                            <label for="femail">Email Address *</label>
+                            <input type="email" id="femail" placeholder="your@email.com" />
+                        </div>
+                        <div class="fg">
+                            <label for="fphone">Phone / WhatsApp *</label>
+                            <input type="tel" id="fphone" placeholder="+971 50 000 0000" />
+                        </div>
+
+                        <!-- GUEST COUNTER -->
+                        <div class="fg full">
+                            <label>Number of Guests *</label>
+                            <div class="counter-wrap">
+                                <button class="counter-btn" onclick="adjustGuests(-10)" type="button">−</button>
+                                <div class="counter-val" id="guestCount">20</div>
+                                <button class="counter-btn" onclick="adjustGuests(10)" type="button">+</button>
+                            </div>
+                            <small style="font-size:12px;color:var(--text-soft);margin-top:6px;">Minimum 10 guests. Use
+                                +/- to adjust in increments of 10.</small>
+                        </div>
+
+                        <!-- DATE/TIME -->
+                        <div class="fg">
+                            <label for="fdate">Event Date *</label>
+                            <input type="date" id="fdate" />
+                        </div>
+                        <div class="fg">
+                            <label for="ftime">Service Time *</label>
+                            <input type="time" id="ftime" />
+                        </div>
+
+                        <!-- PACKAGE -->
+                        <div class="fg full">
+                            <label for="fpackage">Catering Package *</label>
+                            <select id="fpackage">
+                                <option value="" disabled selected>Select a package</option>
+                                <option>Zafrani — AED 85/person</option>
+                                <option>Shahi — AED 130/person</option>
+                                <option>Khaas — AED 195/person</option>
+                                <option>Custom / I need a quote</option>
+                            </select>
+                        </div>
+
+                        <!-- OCCASION -->
+                        <div class="fg full">
+                            <label for="foccasion">Type of Occasion *</label>
+                            <select id="foccasion">
+                                <option value="" disabled selected>Select occasion type</option>
+                                <option>Corporate Event / Office Party</option>
+                                <option>Wedding / Engagement</option>
+                                <option>Birthday Celebration</option>
+                                <option>Private Dinner Party</option>
+                                <option>Eid / Festival Celebration</option>
+                                <option>Product Launch / Brand Event</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- LOCATION -->
+                        <div class="fg full">
+                            <label for="flocation">Event Location / Address *</label>
+                            <input type="text" id="flocation" placeholder="e.g. Jumeirah 1, Dubai — or a venue name" />
+                        </div>
+
+                        <!-- MENU PREFERENCES -->
+                        <div class="fg full">
+                            <label>Menu Preferences (select all that apply)</label>
+                            <div class="menu-checks">
+                                <label class="menu-check" onclick="toggleCheck(this)">
+                                    <input type="checkbox" value="Vegetarian" />
+                                    <div class="check-box"><span class="check-tick">✓</span></div>
+                                    <span class="check-label">Vegetarian options</span>
+                                </label>
+                                <label class="menu-check" onclick="toggleCheck(this)">
+                                    <input type="checkbox" value="Non-Vegetarian" />
+                                    <div class="check-box"><span class="check-tick">✓</span></div>
+                                    <span class="check-label">Non-vegetarian options</span>
+                                </label>
+                                <label class="menu-check" onclick="toggleCheck(this)">
+                                    <input type="checkbox" value="Biryani Station" />
+                                    <div class="check-box"><span class="check-tick">✓</span></div>
+                                    <span class="check-label">Live Biryani station</span>
+                                </label>
+                                <label class="menu-check" onclick="toggleCheck(this)">
+                                    <input type="checkbox" value="Chaat Station" />
+                                    <div class="check-box"><span class="check-tick">✓</span></div>
+                                    <span class="check-label">Live Chaat station</span>
+                                </label>
+                                <label class="menu-check" onclick="toggleCheck(this)">
+                                    <input type="checkbox" value="Tandoor Station" />
+                                    <div class="check-box"><span class="check-tick">✓</span></div>
+                                    <span class="check-label">Live Tandoor station</span>
+                                </label>
+                                <label class="menu-check" onclick="toggleCheck(this)">
+                                    <input type="checkbox" value="Dessert Station" />
+                                    <div class="check-box"><span class="check-tick">✓</span></div>
+                                    <span class="check-label">Dessert station</span>
+                                </label>
+                                <label class="menu-check" onclick="toggleCheck(this)">
+                                    <input type="checkbox" value="Beverages" />
+                                    <div class="check-box"><span class="check-tick">✓</span></div>
+                                    <span class="check-label">Beverages / drinks</span>
+                                </label>
+                                <label class="menu-check" onclick="toggleCheck(this)">
+                                    <input type="checkbox" value="Gluten-Free" />
+                                    <div class="check-box"><span class="check-tick">✓</span></div>
+                                    <span class="check-label">Gluten-free options</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- SPECIAL REQUESTS -->
+                        <div class="fg full">
+                            <label for="fspecial">Special Requests or Dietary Requirements</label>
+                            <textarea id="fspecial"
+                                placeholder="Any allergies, specific dishes, custom requests, décor preferences or additional services you'd like…"></textarea>
+                        </div>
+
+                        <!-- HOW DID YOU HEAR -->
+                        <div class="fg full">
+                            <label for="fhear">How Did You Hear About Us?</label>
+                            <select id="fhear">
+                                <option value="" disabled selected>Select an option</option>
+                                <option>Google Search</option>
+                                <option>Instagram / Social Media</option>
+                                <option>WhatsApp</option>
+                                <option>Friend / Word of Mouth</option>
+                                <option>Visited H2O Cafe</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="wa-submit-row">
+                        <button class="btn-submit" onclick="handleSubmit('form')">Submit Enquiry</button>
+                        <button class="btn-wa-submit" onclick="handleSubmit('whatsapp')">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.528 5.857L.057 23.25a.75.75 0 00.924.924l5.393-1.471A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.692-.518-5.222-1.416l-.374-.22-3.877 1.057 1.057-3.877-.22-.374A9.953 9.953 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z" />
+                            </svg>
+                            Send via WhatsApp
+                        </button>
+                    </div>
+                    <p class="form-note">🔒 We'll never share your information. Responses within 24 hours.</p>
+                </div>
+
+                <!-- SUCCESS -->
+                <div class="success-state" id="successState">
+                    <div class="success-icon">🍛</div>
+                    <h3>Enquiry Received!</h3>
+                    <p>Thank you for your catering enquiry. Our team will review your request and contact you within
+                        <strong style="color:var(--cream)">24 hours</strong> to confirm your booking.
+                    </p>
+                    <br />
+                    <p>For faster assistance, chat with us directly on WhatsApp:</p>
+                    <a class="success-wa"
+                        href="https://wa.me/971561387787?text=Hi%2C%20I%20just%20submitted%20a%20catering%20enquiry%20for%20Khaas%20Zaika!"
+                        target="_blank">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.528 5.857L.057 23.25a.75.75 0 00.924.924l5.393-1.471A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.692-.518-5.222-1.416l-.374-.22-3.877 1.057 1.057-3.877-.22-.374A9.953 9.953 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z" />
+                        </svg>
+                        Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <div class="testi-section">
+        <div class="testi-inner">
+            <p class="section-label">What Clients Say</p>
+            <h2>Trusted by Dubai's <em>Best Events</em></h2>
+            <div class="testi-grid">
+                <div class="testi">
+                    <div class="stars">★★★★★</div>
+                    <p class="testi-quote">"H2O Cafe is a great spot! Roy provided exceptional service. Comfortable
+                        ambiance, quality food and a delightful experience — highly recommend!"</p>
+                    <div class="testi-author">Himanshu Shukla</div>
+                    <div class="testi-source">Google Review</div>
+                </div>
+                <div class="testi">
+                    <div class="stars">★★★★★</div>
+                    <p class="testi-quote">"A fantastic spot with delicious food, a cozy ambiance, and top-notch
+                        service. Roy and Soniya stand out with their exceptional hospitality. The atmosphere is
+                        perfect."</p>
+                    <div class="testi-author">Shruti Balu</div>
+                    <div class="testi-source">Google Review</div>
+                </div>
+                <div class="testi">
+                    <div class="stars">★★★★★</div>
+                    <p class="testi-quote">"H2O is absolutely fantastic! With the new management, everything is running
+                        so smoothly. The staff and service are just wonderful — a great place to be!"</p>
+                    <div class="testi-author">Dipika Jhawar</div>
+                    <div class="testi-source">Google Review</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT STRIP -->
+    <div class="contact-strip">
+        <div class="contact-inner">
+            <div class="contact-item">
+                <span class="contact-icon">📍</span>
+                <div>
+                    <div class="contact-label">Our Location</div>
+                    <div class="contact-val">Shop 4, Reem Residency, C-47B St, Al Karama, Dubai, UAE</div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <div>
+                    <div class="contact-label">Call or WhatsApp</div>
+                    <div class="contact-val"><a href="tel:+971561387787">+971 56 138 7787</a></div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">✉️</span>
+                <div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-val"><a href="mailto:h2ocafedxb@gmail.com">h2ocafedxb@gmail.com</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <img class="nav-brand-logo" src="https://h2ocafeandrestaurant.ae/wp-content/uploads/2025/06/Logo.png"
+            alt="Khaas Zaika Logo">
+        <div class="footer-logo">Khaas Zaika</div>
+        <div class="footer-tagline">by H2O Cafe &amp; Restaurant · Al Karama, Dubai</div>
+        <div class="footer-links">
+            <a href="https://h2ocafeandrestaurant.ae" target="_blank">H2O Website</a>
+            <a href="#menu">Menu</a>
+            <a href="#packages">Packages</a>
+            <a href="#order">Place Order</a>
+            <a href="tel:+971561387787">Call Us</a>
+            <a href="https://wa.me/971561387787" target="_blank">WhatsApp</a>
+        </div>
+        <p class="footer-copy">© 2025 H2O Cafe &amp; Restaurant · Khaas Zaika Catering · All Rights Reserved · Designed
+            for h2ocafeandrestaurant.ae</p>
+    </footer>
+
+    <script>
+        // Menu tabs
+        function showTab(id) {
+            document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('tab-' + id).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Guest counter
+        let guests = 20;
+        function adjustGuests(delta) {
+            guests = Math.max(10, guests + delta);
+            document.getElementById('guestCount').textContent = guests;
+        }
+
+        // Menu check toggle
+        // function toggleCheck(el) {
+        //     el.classList.toggle('selected');
+        //     el.querySelector('input').checked = el.classList.contains('selected');
+        // }
+
+        // Package selection fills form
+        function selectPackage(pkg) {
+            document.getElementById('fpackage').value = pkg;
+            document.getElementById('order').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(() => { document.getElementById('fpackage').style.borderColor = 'var(--gold)'; setTimeout(() => { document.getElementById('fpackage').style.borderColor = ''; }, 1500); }, 600);
+        }
+
+        // Form submission
+        function handleSubmit(type) {
+            const fname = document.getElementById('fname').value.trim();
+            const lname = document.getElementById('lname').value.trim();
+            const email = document.getElementById('femail').value.trim();
+            const phone = document.getElementById('fphone').value.trim();
+            const date = document.getElementById('fdate').value;
+            const time = document.getElementById('ftime').value;
+            const pkg = document.getElementById('fpackage').value;
+            const occasion = document.getElementById('foccasion').value;
+            const location = document.getElementById('flocation').value.trim();
+            const special = document.getElementById('fspecial').value.trim();
+
+            if (!fname || !lname || !email || !phone || !date || !pkg || !occasion || !location) {
+                showToast('Please fill in all required fields.'); return;
+            }
+            if (!email.includes('@')) { showToast('Please enter a valid email address.'); return; }
+
+            // Collect preferences
+            const prefs = [...document.querySelectorAll('.menu-check.selected input')].map(i => i.value).join(', ');
+
+            if (type === 'whatsapp') {
+                const msg = `Hi H2O Cafe! I'd like to place a Khaas Zaika catering enquiry:%0A%0A👤 *Name:* ${fname} ${lname}%0A📧 *Email:* ${email}%0A📞 *Phone:* ${phone}%0A%0A🗓️ *Event Date:* ${date}%0A⏰ *Time:* ${time}%0A👥 *Guests:* ${guests}%0A📦 *Package:* ${pkg}%0A🎉 *Occasion:* ${occasion}%0A📍 *Location:* ${location}%0A%0A✅ *Menu Preferences:* ${prefs || 'Not specified'}%0A%0A💬 *Special Requests:* ${special || 'None'}%0A%0APlease confirm availability. Thank you!`;
+                window.open('https://wa.me/971561387787?text=' + msg, '_blank');
+            }
+
+            document.getElementById('theForm').style.display = 'none';
+            document.getElementById('successState').classList.add('visible');
+            window.scrollTo({ top: document.getElementById('order').offsetTop - 80, behavior: 'smooth' });
+        }
+
+        function showToast(msg) {
+            const e = document.querySelector('.toast');
+            if (e) e.remove();
+            const t = document.createElement('div');
+            t.className = 'toast'; t.textContent = msg;
+            document.body.appendChild(t);
+            setTimeout(() => t && t.remove(), 3500);
+        }
+
+        document.querySelectorAll('.menu-check input').forEach(input => {
+            input.addEventListener('change', function () {
+                this.closest('.menu-check').classList.toggle('selected', this.checked);
+            });
+        });
+
+        // Set min date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('fdate').min = today;
+
+        // Scroll-in animations
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.feature, .menu-item, .pkg, .testi, .form-box').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            io.observe(el);
+        });
+    </script>
+</body>
+
+</html>
